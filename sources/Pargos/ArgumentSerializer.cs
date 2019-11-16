@@ -87,7 +87,7 @@ namespace Pargos
 
                 if (property.PropertyType.IsArray)
                 {
-                    routine.WithConverter(value => new[] { value[0] });
+                    routine.WithConverter(value => value == null ? null : new[] { value[0] });
                 }
 
                 if (property.PropertyType == typeof(string))
